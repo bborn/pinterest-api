@@ -51,7 +51,7 @@ module Pinterest
         when :get
           path = path + "?access_token=" + @access_token
           request.url(URI.encode(path), options)
-        when :post, :put, :delete
+        when :post, :put, :delete, :patch
           request.path = URI.encode(path)
           request.body = options unless options.empty?
           request.headers['Authorization'] = "BEARER #{@access_token}"
